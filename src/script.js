@@ -12,6 +12,7 @@ const cartProductInfo = document.getElementById("cart-product-info");
 const btnCheckout = document.getElementById("btn-checkout");
 const cartEmptyMessage = document.getElementById("cart-empty-message");
 const btnDelete = document.getElementById("btn-delete");
+const btnAddToCart = document.getElementById("btn-add-to-cart");
 
 let items = 0;
 
@@ -41,13 +42,6 @@ console.log(productPrice.innerText);
 btnPlus.addEventListener("click", () => {
   items = parseInt(quantityCart.innerText) + 1;
   quantityCart.innerText = items;
-  modalCartQuantity.innerText = items;
-  cartTotal.innerText = parseInt(productPrice.innerText) * items;
-  cartProductInfo.classList.remove("hidden");
-  cartProductInfo.classList.add("flex");
-  btnCheckout.classList.remove("hidden");
-  cartEmptyMessage.classList.add("hidden");
-  cartEmptyMessage.classList.remove("flex");
 });
 
 function deleteItems() {
@@ -63,11 +57,6 @@ btnMinus.addEventListener("click", () => {
   if (parseInt(quantityCart.innerText) > 0) {
     items = parseInt(quantityCart.innerText) - 1;
     quantityCart.innerText = items;
-    modalCartQuantity.innerText = items;
-    cartTotal.innerText = parseInt(productPrice.innerText) * items;
-  }
-  if (items === 0) {
-    deleteItems();
   }
 });
 
@@ -76,3 +65,20 @@ btnDelete.addEventListener("click", () => {
   quantityCart.innerText = 0;
 });
 // cart quantity
+
+// Add to Cart
+
+btnAddToCart.addEventListener("click", () => {
+  if (parseInt(quantityCart.innerText) === 0) {
+    deleteItems();
+    console.log("I ran");
+    return;
+  }
+  modalCartQuantity.innerText = items;
+  cartTotal.innerText = parseInt(productPrice.innerText) * items;
+  cartProductInfo.classList.remove("hidden");
+  cartProductInfo.classList.add("flex");
+  btnCheckout.classList.remove("hidden");
+  cartEmptyMessage.classList.add("hidden");
+  cartEmptyMessage.classList.remove("flex");
+});
