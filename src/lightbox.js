@@ -10,7 +10,7 @@ const lightboxThumbnails = document.getElementsByName("lightbox-thumbnail");
 const prevBtns = document.querySelectorAll(".js-prev-btn");
 const nextBtns = document.querySelectorAll(".js-next-btn");
 
-let slideIndex = 0;
+let slideIndex = 1;
 
 lightboxClose.addEventListener("click", () => {
   lightbox.classList.add("hidden");
@@ -50,8 +50,9 @@ nextBtns.forEach((nextBtn, ind) => {
 
 prevBtns.forEach((prevBtn, ind) => {
   prevBtn.addEventListener("click", () => {
-    if (slideIndex === 0) slideIndex = lightboxThumbnails.length;
     slideIndex -= 1;
+    if (slideIndex === 0) slideIndex = lightboxThumbnails.length;
+
     ind === 0
       ? (productLightbox.src = `./images/image-product-${slideIndex}.jpg`)
       : (mainProduct.src = `./images/image-product-${slideIndex}.jpg`);
