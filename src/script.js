@@ -1,5 +1,8 @@
+// hamburger menu variables
 const btnOpen = document.getElementById("btn-open");
 const navBar = document.getElementById("navbar");
+
+// cart variables
 const btnCart = document.getElementById("btn-cart");
 const modalCart = document.getElementById("modal-cart");
 const quantityCart = document.getElementById("quantity-cart");
@@ -13,6 +16,8 @@ const btnCheckout = document.getElementById("btn-checkout");
 const cartEmptyMessage = document.getElementById("cart-empty-message");
 const btnDelete = document.getElementById("btn-delete");
 const btnAddToCart = document.getElementById("btn-add-to-cart");
+
+// Lightbox variables
 
 let items = 0;
 

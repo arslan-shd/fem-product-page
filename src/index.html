@@ -23,8 +23,92 @@
 
     <title>E-commerce product page</title>
   </head>
-  <body class="font-kumbhSans">
-    <section class="bg-white min-h-screen lg:relative">
+  <body class="font-kumbhSans min-h-screen relative">
+    <!-- light box -->
+    <div
+      id="lightbox"
+      class="hidden absolute top-0 left-0 bottom-0 right-0 z-40 bg-neutral-lightBox justify-center items-center"
+    >
+      <img
+        id="lightbox-close"
+        class="cursor-pointer absolute right-10 top-10"
+        src="./images/icon-close.svg"
+        alt=""
+      />
+      <div class="flex flex-col gap-4 items-center">
+        <div class="relative w-min">
+          <img
+            id="product-lightbox"
+            style="max-width: revert"
+            class="w-[32rem] rounded-lg"
+            src="./images/image-product-1.jpg"
+            alt=""
+          />
+
+          <!-- prev next arrows -->
+          <div
+            class="js-prev-btn absolute top-1/2 left-2 w-12 h-12 flex items-center justify-center bg-white rounded-full cursor-pointer"
+          >
+            <img src="./images/icon-previous.svg" alt="" />
+          </div>
+          <div
+            class="js-next-btn absolute top-1/2 right-2 w-12 h-12 flex items-center justify-center bg-white rounded-full cursor-pointer"
+          >
+            <img src="./images/icon-next.svg" alt="" />
+          </div>
+          <!-- prev next arrows -->
+        </div>
+        <div class="flex justify-center gap-6">
+          <!-- <div class="rounded-lg overflow-hidden cursor-pointer">
+            <img
+              class="w-1/2"
+              src="./images/image-product-1-thumbnail.jpg"
+              alt=""
+            />
+          </div>
+          <div class="rounded-lg overflow-hidden cursor-pointer">
+            <img
+              class="w-1/2"
+              src="./images/image-product-2-thumbnail.jpg"
+              alt=""
+            />
+          </div>
+          <div class="rounded-lg overflow-hidden cursor-pointer">
+            <img
+              class="w-1/2"
+              src="./images/image-product-3-thumbnail.jpg"
+              alt=""
+            />
+          </div> -->
+          <img
+            name="lightbox-thumbnail"
+            class="w-24 rounded-lg cursor-pointer"
+            src="./images/image-product-1-thumbnail.jpg"
+            alt=""
+          />
+          <img
+            name="lightbox-thumbnail"
+            class="w-24 rounded-lg cursor-pointer"
+            src="./images/image-product-2-thumbnail.jpg"
+            alt=""
+          />
+          <img
+            name="lightbox-thumbnail"
+            class="w-24 rounded-lg cursor-pointer"
+            src="./images/image-product-3-thumbnail.jpg"
+            alt=""
+          />
+          <img
+            name="lightbox-thumbnail"
+            class="w-24 rounded-lg cursor-pointer"
+            src="./images/image-product-4-thumbnail.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <!-- light box -->
+    <section class="lg:relative">
       <!-- Header -->
       <header
         class="fixed top-0 left-0 right-0 z-20 bg-white lg:w-[85%] mx-auto p-4 flex items-center"
@@ -99,6 +183,7 @@
           <div class="relative lg:static">
             <div class="mb-8">
               <img
+                id="main-product"
                 class="lg:rounded-2xl"
                 src="./images/image-product-1.jpg"
                 alt=""
@@ -149,27 +234,39 @@
                 </button>
               </div>
               <div
-                class="absolute top-1/2 left-2 w-12 h-12 flex items-center justify-center bg-white rounded-full cursor-pointer lg:hidden"
+                class="js-prev-btn absolute top-1/2 left-2 w-12 h-12 flex items-center justify-center bg-white rounded-full cursor-pointer lg:hidden"
               >
                 <img src="./images/icon-previous.svg" alt="" />
               </div>
               <div
-                class="absolute top-1/2 right-2 w-12 h-12 flex items-center justify-center bg-white rounded-full cursor-pointer lg:hidden"
+                class="js-next-btn absolute top-1/2 right-2 w-12 h-12 flex items-center justify-center bg-white rounded-full cursor-pointer lg:hidden"
               >
                 <img src="./images/icon-next.svg" alt="" />
               </div>
             </div>
             <div class="hidden lg:flex justify-between gap-6">
-              <div class="rounded-lg overflow-hidden cursor-pointer">
+              <div
+                name="main-thumbnail"
+                class="rounded-lg overflow-hidden cursor-pointer"
+              >
                 <img src="./images/image-product-1-thumbnail.jpg" alt="" />
               </div>
-              <div class="rounded-lg overflow-hidden cursor-pointer">
+              <div
+                name="main-thumbnail"
+                class="rounded-lg overflow-hidden cursor-pointer"
+              >
                 <img src="./images/image-product-2-thumbnail.jpg" alt="" />
               </div>
-              <div class="rounded-lg overflow-hidden cursor-pointer">
+              <div
+                name="main-thumbnail"
+                class="rounded-lg overflow-hidden cursor-pointer"
+              >
                 <img src="./images/image-product-3-thumbnail.jpg" alt="" />
               </div>
-              <div class="rounded-lg overflow-hidden cursor-pointer">
+              <div
+                name="main-thumbnail"
+                class="rounded-lg overflow-hidden cursor-pointer"
+              >
                 <img src="./images/image-product-4-thumbnail.jpg" alt="" />
               </div>
             </div>
@@ -230,5 +327,6 @@
       <!-- main -->
     </section>
     <script src="./script.js"></script>
+    <script src="./lightbox.js"></script>
   </body>
 </html>

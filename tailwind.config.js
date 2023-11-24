@@ -12,6 +12,7 @@ module.exports = {
           heading: "hsl(220, 13%, 13%)",
           description: "hsl(219, 9%, 45%)",
           muted: "hsl(220, 14%, 75%)",
+          lightBox: "rgba(0,0,0,0.75)",
         },
       },
       fontFamily: {
