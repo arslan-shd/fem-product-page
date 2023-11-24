@@ -50,8 +50,8 @@ nextBtns.forEach((nextBtn, ind) => {
 
 prevBtns.forEach((prevBtn, ind) => {
   prevBtn.addEventListener("click", () => {
-    slideIndex -= 1;
     if (slideIndex === 0) slideIndex = lightboxThumbnails.length;
+    slideIndex -= 1;
     ind === 0
       ? (productLightbox.src = `./images/image-product-${slideIndex}.jpg`)
       : (mainProduct.src = `./images/image-product-${slideIndex}.jpg`);
